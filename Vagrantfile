@@ -7,19 +7,24 @@ config.vm.provider "virtualbox" do |v|
 end
 
 $scriptNode2 = <<-SCRIPT
-echo Ciao 2
-date > /etc/vagrant_provisioned_at
+echo Inizializzazione nodo2
 sudo yum -y update
+echo Installo java
+sudo yum -y install java
+echo Installo git
+sudo yum -y install git
+echo Installo jenkins
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
-sudo yum -y install java jenkins git
+sudo yum -y install jenkins
 sudo service jenkins start
 SCRIPT
 
 $scriptNode1 = <<-SCRIPT
-echo Ciao
-date > /etc/vagrant_provisioned_at
-sudo yum -y update && yum -y install ansible
+echo Inizializzazione nodo1
+sudo yum -y update
+echo Installo ansible
+sudo yum -y install ansible
 SCRIPT
 
 config.vm.define "node1" do |node1|
