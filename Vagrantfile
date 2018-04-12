@@ -33,6 +33,7 @@ config.vm.define "node2" do |node2|
   node2.vm.network "private_network", ip: "192.168.0.102"
   node2.vm.hostname = "node2"
   node2.vm.provision "shell", inline: $scriptNode2
+  node2.vm.network "forwarded_port", guest: 8080, host: 9999
 end
 
    
