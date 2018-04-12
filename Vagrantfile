@@ -7,7 +7,7 @@ config.vm.provider "virtualbox" do |v|
 end
 
 $scriptNode2 = <<-SCRIPT
-echo Ciao ciao 2
+echo Ciao 2
 date > /etc/vagrant_provisioned_at
 sudo yum -y update
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
