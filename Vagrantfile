@@ -7,13 +7,13 @@ config.vm.provider "virtualbox" do |v|
 end
 
 $scriptNode2 = <<-SCRIPT
-echo Inizializzazione nodo2
+echo '****************** INIZIALIZZAZIONE nodo2'
 sudo yum -y update
-echo Installo java
+echo '****************** INSTALLO java'
 sudo yum -y install java
-echo Installo git
+echo '****************** INSTALLO git'
 sudo yum -y install git
-echo Installo jenkins
+echo '****************** INSTALLO jenkins'
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 sudo yum -y install jenkins
@@ -21,9 +21,9 @@ sudo service jenkins start
 SCRIPT
 
 $scriptNode1 = <<-SCRIPT
-echo Inizializzazione nodo1
+echo '****************** INIZIALIZZAZIONE nodo1'
 sudo yum -y update
-echo Installo ansible
+echo '****************** INSTALLO ansible'
 sudo yum -y install ansible
 SCRIPT
 
