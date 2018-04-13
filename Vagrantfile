@@ -7,7 +7,7 @@ config.vm.provider "virtualbox" do |v|
 end
 
 $scriptNode2 = <<-SCRIPT
-echo '****************** INIZIALIZZAZIONE nodo2'
+echo '****************** INIZIALIZZAZION nodo2'
 sudo yum -y update
 echo '****************** INSTALLO java'
 sudo yum -y install java
