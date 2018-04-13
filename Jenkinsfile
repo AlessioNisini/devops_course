@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout SCM') {
             steps {
-                sh 'git checkout ${env.BRANCH_NAME}'
+                sh 'git checkout ${BRANCH_NAME}'
             }
         }
         stage('release') {
