@@ -18,6 +18,8 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenk
 sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 sudo yum -y install jenkins
 sudo service jenkins start
+curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo
+sudo yum -y install sbt docker
 SCRIPT
 
 $scriptNode1 = <<-SCRIPT
